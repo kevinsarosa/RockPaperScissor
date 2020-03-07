@@ -25,25 +25,6 @@ class MainActivity : AppCompatActivity(), CallBack {
 
         for (id in idList) {
             id.setOnClickListener {
-                player2 = suit.random()
-                when (player2) {
-                    "Kertas" -> {
-                        kertas2.setBackgroundColor(getColor(R.color.colorAccent))
-                        gunting2.setBackgroundColor(getColor(android.R.color.transparent))
-                        batu2.setBackgroundColor(getColor(android.R.color.transparent))
-                    }
-                    "Batu" -> {
-                        batu2.setBackgroundColor(getColor(R.color.colorAccent))
-                        gunting2.setBackgroundColor(getColor(android.R.color.transparent))
-                        kertas2.setBackgroundColor(getColor(android.R.color.transparent))
-                    }
-                    "Gunting" -> {
-                        gunting2.setBackgroundColor(getColor(R.color.colorAccent))
-                        kertas2.setBackgroundColor(getColor(android.R.color.transparent))
-                        batu2.setBackgroundColor(getColor(android.R.color.transparent))
-                    }
-                }
-                Log.d("Komputer memilih: ", player2)
                 val index = id.contentDescription.toString().toInt()
 
                 player1 = suit[index]
@@ -63,6 +44,28 @@ class MainActivity : AppCompatActivity(), CallBack {
                     }
                 }
                 Log.d("Player 1 Memilih: ", player1)
+
+                player2 = suit.random()
+                when (player2) {
+                    "Kertas" -> {
+                        kertas2.setBackgroundColor(getColor(R.color.colorAccent))
+                        gunting2.setBackgroundColor(getColor(android.R.color.transparent))
+                        batu2.setBackgroundColor(getColor(android.R.color.transparent))
+                    }
+                    "Batu" -> {
+                        batu2.setBackgroundColor(getColor(R.color.colorAccent))
+                        gunting2.setBackgroundColor(getColor(android.R.color.transparent))
+                        kertas2.setBackgroundColor(getColor(android.R.color.transparent))
+                    }
+                    "Gunting" -> {
+                        gunting2.setBackgroundColor(getColor(R.color.colorAccent))
+                        kertas2.setBackgroundColor(getColor(android.R.color.transparent))
+                        batu2.setBackgroundColor(getColor(android.R.color.transparent))
+                    }
+                }
+
+                Log.d("Komputer memilih: ", player2)
+
                 controller.result(player1, player2)
             }
         }
@@ -71,7 +74,7 @@ class MainActivity : AppCompatActivity(), CallBack {
             player2 = ""
             resetBackground()
             hasil.setImageResource(R.drawable.vs)
-            Log.d("Player1: ","Reset")
+            Log.d("Player1: ", "Reset")
         }
     }
 
