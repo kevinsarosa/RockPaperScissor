@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity(), CallBack {
 
         val suit = mutableListOf("Batu", "Gunting", "Kertas")
         val idList = mutableListOf(batu1, kertas1, gunting1)
-        var player1 = ""
-        var player2 = ""
+        var player1: String
+        var player2: String
         val controller = Controller(this)
 
 
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), CallBack {
                         batu1.setBackgroundColor(getColor(android.R.color.transparent))
                     }
                 }
-                Log.d("Player 1 Memilih: ", player1)
+                Log.d("Player 1 Memilih ", player1)
 
                 player2 = suit.random()
                 when (player2) {
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity(), CallBack {
                     }
                 }
 
-                Log.d("Komputer memilih: ", player2)
+                Log.d("Komputer memilih ", player2)
 
                 controller.result(player1, player2)
             }
